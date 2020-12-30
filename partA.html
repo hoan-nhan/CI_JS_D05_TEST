@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //A. Problem Solving
+        //1. 
+        // let a1 = prompt('Please insert an array');
+        // let a2 = prompt('Please insert an array');
+        // let a1Arr = a1.replace(/ /g,"").split(",");
+        // let a2Arr = a2.replace(/ /g,"").split(",");
+        // let arr = []
+        // for (let i = 0; i < a1Arr.length; i++){
+        //     if (!a2Arr.includes(a1Arr[i])) {
+        //         arr.push(a1Arr[i])
+        //     }
+        // }
+        // for (let j =0; j<a2Arr.length;j++) {
+        //     if(!a1Arr.includes(a2Arr[j])) {
+        //         arr.push(a2Arr[j])
+        //     }
+        // }
+        // console.log(arr)
+
+        //2. 
+        let result = [
+            {
+                name: 'Arsenal',
+                points: 99,
+                GD: 45,
+            },
+            {
+                name: 'Chelsea',
+                points: 75,
+                GD: 39,
+            },
+            {
+                name: 'Manchester United',
+                points: 60,
+                GD: 29,
+            },
+            {
+                name: 'Liverpool',
+                points: 88,
+                GD: 39,
+            },
+        ]
+
+        let points = []
+        for (let i = 0; i < result.length; i++) {
+            points.push(result[i].points)
+        }
+        points.sort(function (a, b) { return (b - a) })
+        console.log(points)
+        for (let i = 0; i < result.length; i++) {
+            for (let j = 0; j < points.length; j++) {
+                if (points[j] == result[i].points) {
+                    if (!result[i].position) {
+                        result[i].position = j + 1
+                    }
+                }
+            }
+        }
+        console.log(result)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
